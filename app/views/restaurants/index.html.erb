@@ -1,35 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container mx-3">
+  <p id="notice"><%= notice %></p>
 
-<h1>Restaurants</h1>
+<div class="my-3">
+  <h1>Restaurants</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone number</th>
-      <th>Integer</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone_number %></td>
-        <td><%= restaurant.integer %></td>
-        <td><%= restaurant.category %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="mxy-3">Name</th>
+        <th class="mxy-3">Address</th>
+        <th class="mxy-3">Phone number</th>
+<!--         <th class="pxy-3">Integer</th> -->
+        <th class="mxy-5">Category</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.phone_number %></td>
+          <td><%= restaurant.integer %></td>
+          <td><%= restaurant.category %></td>
+          <td><%= link_to 'Show', restaurant, class: "btn btn-info" %></td>
+          <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+<div>
+  <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-secondary align-center mt-3"%>
+</div>
+</div>
