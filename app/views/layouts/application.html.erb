@@ -13,6 +13,11 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="alert" onclick="this.remove()">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
